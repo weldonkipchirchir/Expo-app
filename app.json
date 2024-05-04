@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "Expo-app",
+    "scheme":"aora",
     "slug": "Expo-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +22,14 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package":"com.jsm.aora"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
