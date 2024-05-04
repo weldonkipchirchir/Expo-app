@@ -3,7 +3,6 @@ import {
     useContext,
     useState,
     useEffect,
-    Children
 } from "react";
 import {
     getCurrentUser
@@ -24,23 +23,24 @@ export const GlobalProvider = ({
         getCurrentUser()
             .then((res) => {
                 if (res) {
-                    setIsLoggedIn(true)
-                    setUser(res)
+                    setIsLoggedIn(true);
+                    setUser(res);
                 } else {
-                    isLoggedIn(false)
-                    setUser(null)
+                    setIsLoggedIn(false);
+                    setUser(null);
                 }
             })
             .catch((error) => {
-                console.log(error)
+                setIsLoggedIn(false);
+                setUser(null);
             })
             .finally(() => {
-                setIsLoading(false)
-            })
-    })
+                setIsLoading(false);
+            });
+    }, []);
     
-    return ( <
-        GlobalContext.Provider value = {{
+    
+    return ( <GlobalContext.Provider value = {{
             isLoggedIn,
             setIsLoggedIn,
             user, 
